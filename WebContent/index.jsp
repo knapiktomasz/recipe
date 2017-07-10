@@ -17,7 +17,7 @@
 <body>
 <h1>Strona główna</h1>
 <div class="form-group">
-<a class="btn btn-default" href="<c:url value= "/form.jsp"/>">Dodaj przepis</a>
+<a class="btn btn-default" href="<c:url value= "/form"/>">Dodaj przepis</a>
 </div>
 
 

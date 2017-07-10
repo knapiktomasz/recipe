@@ -16,6 +16,11 @@
 </head>
 <body>
 	<h1>Dodaj/Edytuj przepis</h1>
+		<div class="form-group">
+	<div>
+		<textarea class="form-control" rows="1" placeholder="Wpisz nazwę"></textarea>
+	</div>
+	</div>
 	<div class="form-group">
 	<div>
 		<textarea class="form-control" rows="10" placeholder="wpisz produkty"></textarea>
