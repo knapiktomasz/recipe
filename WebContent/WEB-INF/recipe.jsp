@@ -12,33 +12,34 @@
 	crossorigin="anonymous">
 
 <link rel="stylesheet" type="text/css" href="STYLE/style.css" />
-<title>Formularz</title>
+<title>Przepis</title>
 </head>
 <body>
-	<h1>Dodaj/Edytuj przepis</h1>
-	<form  method="post" action="<c:url value="/recipe"/>"> 
+<div class="container">
+	<h1>Przepis</h1>
+	<form  method="get" action="<c:url value="/"/>"> 
 		<div class="form-group">
 	<div>
-		<textarea class="form-control" rows="1" placeholder="Wpisz nazwę" id="name" name="name"></textarea>
+		<textarea class="form-control" rows="1" readonly="readonly">${name}</textarea>
 	</div>
 	</div>
 	<div class="form-group">
 	<div>
-		<textarea class="form-control" rows="10" placeholder="wpisz produkty"  id="products" name="products"></textarea>
+		<textarea class="form-control" rows="10" readonly="readonly">${products}</textarea>
 	</div>
 	</div>
 	<div class="form-group">
 	<div>
-		<textarea class="form-control" rows="10" placeholder="wpisz przepis"  id="make" name="make"></textarea>
+		<textarea class="form-control" rows="10"  readonly="readonly">${make}</textarea>
 	</div>
 	</div>
 	<div class="form-group">
 	<div>
-
-		<button class="btn btn-success" type="submit">Zapisz</button>
-
+		<button class="btn btn-success" type="submit">Strona główna</button>
+	
 	</div>
 	</div>
 	</form>
+	</div>
 </body>
 </html>
