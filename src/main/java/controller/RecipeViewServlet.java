@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,29 +10,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/recipe")
+import dao.RecipeDao;
+import model.Recipe;
+
+@WebServlet("/view")
 public class RecipeViewServlet extends HttpServlet {
-	String name;
-	String products;
-	String make;
+
+	private RecipeDao recipeDao = new RecipeDao();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int id = Integer.parseInt(req.getParameter("id"));
 
-	}
+		try {
+			Recipe recipe = recipeDao.findById(id);
+			req.setAttribute("recipe", recipe);
+			RequestDispatcher rq = req.getRequestDispatcher("/WEB-INF/recipe.jsp");
+			rq.forward(req, resp);
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		name = req.getParameter("name");
-		products = req.getParameter("products");
-		make = req.getParameter("make");
-		req.setAttribute("name", name);
-		req.setAttribute("products", products);
-		req.setAttribute("make", make);
+		} catch (SQLException e) {
 
-		RequestDispatcher rq = req.getRequestDispatcher("/WEB-INF/recipe.jsp");
-		rq.forward(req, resp);
+			e.printStackTrace();
+		}
 
-	}
+			}
 
 }

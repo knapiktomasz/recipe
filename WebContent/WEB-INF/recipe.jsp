@@ -15,31 +15,33 @@
 <title>Przepis</title>
 </head>
 <body>
-<div class="container">
-	<h1>Przepis</h1>
-	<form  method="get" action="<c:url value="/"/>"> 
-		<div class="form-group">
-	<div>
-		<textarea class="form-control" rows="1" readonly="readonly">${name}</textarea>
-	</div>
-	</div>
-	<div class="form-group">
-	<div>
-		<textarea class="form-control" rows="10" readonly="readonly">${products}</textarea>
-	</div>
-	</div>
-	<div class="form-group">
-	<div>
-		<textarea class="form-control" rows="10"  readonly="readonly">${make}</textarea>
-	</div>
-	</div>
-	<div class="form-group">
-	<div>
-		<button class="btn btn-success" type="submit">Strona główna</button>
-	
-	</div>
-	</div>
-	</form>
+	<div class="container">
+		<h1>Przepis</h1>
+		<form method="get" action="<c:url value="/"/>">
+			
+			<div class="form-group">
+				<div>
+					<textarea class="form-control" rows="1" readonly="readonly">${recipe.name}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div>
+					<textarea class="form-control" rows="10" readonly="readonly">${recipe.products}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div>
+					<textarea class="form-control" rows="10" readonly="readonly">${recipe.make}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div>
+					<button class="btn btn-success" type="submit">Strona
+						główna</button>
+
+				</div>
+			</div>
+		</form>
 	</div>
 </body>
 </html>
